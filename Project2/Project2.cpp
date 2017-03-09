@@ -1,4 +1,18 @@
+#include <stdlib.h>
 #include "Project2.h"
+
+/**
+* @posX current X position
+* @posY current Y position
+* @tarX target X position
+* @tarY target Y position
+*/
+int Heuristic (int posX, int posY, int tarX, int tarY){
+	// Simply use distance as Heuristic
+	diffX = abs(posX - tarX);
+	diffY = abs(posY - tarY);
+	return  diffX > diffY ? diffY*0.5+diffX : diffX*0.5+diffY;
+}
 
 /**
 * @brief default constructor
