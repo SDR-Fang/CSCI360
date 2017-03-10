@@ -8,10 +8,14 @@
 * @tarX target X position
 * @tarY target Y position
 */
-int Heuristic (int posX, int posY, int tarX, int tarY){
+float Heuristic (int posX, int posY, int tarX, int tarY){
 	// Simply use distance as Heuristic
-	// std::cout << "Heuristic: (" << posX << ',' << posY << ") to (" << tarX << ',' << tarY << ")\n";
-	return (posX - tarX) * (posX - tarX) + (posY - tarY) * (posY - tarY);
+	int diffX = abs(posX - tarX);
+	int diffY = abs(posY - tarY);
+	float result = diffX > diffY ? diffY*0.5+diffX : diffX*0.5+diffY;
+		// std::cout << "Heuristic: (" << posX << ',' << posY << ") to ("
+		// 	<< tarX << ',' << tarY << ")=" << result << "\n";
+	return result;
 }
 
 /**
@@ -28,8 +32,8 @@ Project1::Project1(Simulator* sim1) {
  */
 RobotAction Project1::getOptimalAction(Simulator* sim1, Robot* r1) {
     // Here, you should find the next step of the robot.
-	int next_heuristic = 0;
-	int temp_heuristic = 0;
+	float next_heuristic = 0;
+	float temp_heuristic = 0;
 	RobotAction action = STOP;
 	Point2D target = sim1->getTarget();
 	// check actions
