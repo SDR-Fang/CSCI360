@@ -9,7 +9,12 @@
 
 class Project3 {
 private:
-
+	// Probability of Correct action
+	const float pc = 1.0;
+	const float discount = 0.9;
+	std::vector<std::vector<float>> rewardGrid;
+	std::vector<std::vector<float>> utilityGrid;
+	std::vector<std::vector<RobotAction>> actionGrid;
 public:
     /**
      * @brief default constructor

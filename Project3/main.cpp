@@ -34,7 +34,7 @@ int main(int argc, char **argv)
     int numHiddenObstacles = 0; /**< number of hidden obstacles */
     int stoppedSteps = 0; /**< number of steps stopped for */
     int diagSteps = 0; /**< number of diagonal steps */
-    float pc = 0.95; /**< probability of correct transition */
+    float pc = 1.0; /**< probability of correct transition */
     int horVertSteps = 0; /**< number of horizontal or vertical steps */
     bool isRobotAlive = true; /**< robot begins by being alive */
     float pathLength = 0.0; /**< path length */
