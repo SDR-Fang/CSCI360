@@ -30,11 +30,11 @@ int main(int argc, char **argv)
     int tx, ty; // the target location of your robot
     int steps;  // the steps before found the target
     int waitCounter = 100; // amount to wait between steps (milliseconds)
-    int numObstacles = 5; /**< number of obstacles */
+    int numObstacles = 10; /**< number of obstacles */
     int numHiddenObstacles = 0; /**< number of hidden obstacles */
     int stoppedSteps = 0; /**< number of steps stopped for */
     int diagSteps = 0; /**< number of diagonal steps */
-    float pc = 1.0; /**< probability of correct transition */
+    float pc = 0.8; /**< probability of correct transition */
     int horVertSteps = 0; /**< number of horizontal or vertical steps */
     bool isRobotAlive = true; /**< robot begins by being alive */
     float pathLength = 0.0; /**< path length */
